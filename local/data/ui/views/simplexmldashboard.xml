@@ -1,0 +1,17 @@
+<dashboard>
+  <label>SimpleXMLDashboard</label>
+  <row>
+    <panel>
+      <chart>
+        <title>Education Usage</title>
+        <search>
+          <query>index=main sourcetype=NASASquidLogs | search movies | search edu | top 5 From</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="charting.chart">bar</option>
+        <option name="charting.axisY2.enabled">undefined</option>
+      </chart>
+    </panel>
+  </row>
+</dashboard>

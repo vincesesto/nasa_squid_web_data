@@ -16,3 +16,15 @@ access = read : [ * ]
 owner = admin
 version = 6.2.3
 modtime = 1458280039.813478000
+
+[views/basic_dashboard]
+export = none
+owner = admin
+version = 6.2.3
+modtime = 1459636214.979292000
+
+[views/simplexmldashboard]
+export = none
+owner = admin
+version = 6.2.3
+modtime = 1459636223.678462000
