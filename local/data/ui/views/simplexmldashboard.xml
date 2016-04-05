@@ -1,5 +1,5 @@
 <dashboard>
-  <label>SimpleXMLDashboard</label>
+  <label>Educational Site Access</label>
   <row>
     <panel>
       <chart>
@@ -11,6 +11,24 @@
         </search>
         <option name="charting.chart">bar</option>
         <option name="charting.axisY2.enabled">undefined</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+     <panel>
+       <chart>
+         <title>Top Educational User</title>
+         <search>
+           <query>index=main sourcetype=nasasquidlogs | search calclab1.math.tamu.edu | stats count by MonthDay| eventstats avg(count) as average | eval average=round(average,0)</query>
+           <earliest>0</earliest>
+           <latest></latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.legend.placement">bottom</option>
+        <option name="charting.legend.masterLegend">null</option>
+        <option name="height">250px</option>
+        <option name="charting.chart.overlayFields">average</option>
+        <option name="charting.fieldColors">{"count": 0x639BF1, "average":0xFF5A09}</option>
       </chart>
     </panel>
   </row>
