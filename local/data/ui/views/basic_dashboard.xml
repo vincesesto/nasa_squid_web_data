@@ -1,3 +1,30 @@
 <dashboard>
-  <label>Basic Dashboard</label>
+  <label>Show Me Your Maps</label>
+  <row>
+    <panel>
+      <map>
+        <title>User Locations</title>
+        <search>
+          <query>index=main sourcetype="nasasquidlogs" | search From=1* | iplocation From | geostats latfield=lat longfield=lon count by From</query>
+          <earliest>0</earliest>
+          <latest></latest>
+        </search>
+        <option name="mapping.data.maxClusters">100</option>
+        <option name="mapping.drilldown">all</option>
+        <option name="mapping.map.center">(38.48,-102)</option>
+        <option name="mapping.map.zoom">4</option>
+      </map>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <table>
+        <title>Top 5 Countries</title>
+        <search>
+          <query>index=main sourcetype="nasasquidlogs" | search From=1* | stats count by From | iplocation From | top 5 Country</query>
+          <earliest>0</earliest>
+        </search>
+      </table>
+    </panel>
+  </row>
 </dashboard>
